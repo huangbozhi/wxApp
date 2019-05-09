@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/thought/thought",
+    "pages/more/more",
+    "pages/market/market",
+    "pages/xiaoxi/xiaoxi"
+  ],
+  "window": {
+    "backgroundColor": "#FFF",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#00d",
+    "navigationBarTitleText": "知乎",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "backgroundColor": "#fff", 
+    "color": "#999", 
+    "selectedColor": "#1E8AE8", 
+    "borderStyle": "white",
+    "list": [{
+      "selectedIconPath": "assets/images/shouye-hover.png",
+      "iconPath": "assets/images/shouye.png",
+      "pagePath": "pages/index/index",
+      "text": "首页"
+    }, {
+      "selectedIconPath": "assets/images/thought-hover.png",
+      "iconPath": "assets/images/thought.png",
+      "pagePath": "pages/thought/thought",
+      "text": "想法"
+    }, {
+      "selectedIconPath": "assets/images/market-hover.png",
+      "iconPath": "assets/images/market.png",
+      "pagePath": "pages/market/market",
+      "text": "市场"
+    }, {
+      "selectedIconPath": "assets/images/xiaoxi-hover.png",
+      "iconPath": "assets/images/xiaoxi.png",
+      "pagePath": "pages/xiaoxi/xiaoxi",
+      "text": "消息"
+    }, {
+      "selectedIconPath": "assets/images/more-hover.png",
+      "iconPath": "assets/images/more.png",
+      "pagePath": "pages/more/more",
+      "text": "更多"
+    }]
+  },
+  "sitemapLocation": "sitemap.json"
+}

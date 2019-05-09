@@ -1,0 +1,30 @@
+{
+  "pages": [
+    "pages/jcsp/index",
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "荣耀锦集",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/jcsp/index",
+        "text": "视频",
+        "iconPath": "images/jcsp.png",
+        "selectedIconPath": "images/jcsp-hover.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的",
+        "iconPath": "images/mine.png",
+        "selectedIconPath": "images/mine-hover.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

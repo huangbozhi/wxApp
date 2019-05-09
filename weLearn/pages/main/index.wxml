@@ -1,0 +1,65 @@
+<!--pages/main/index.wxml-->
+<!-- <swiper
+  indicator-dots="true"
+  autoplay="true"
+  interval="{{interval}}"
+  duration="{{duration}}"
+  indicator-color="red"
+  indicator-active-color="white"
+  current="0"
+  interval="2000"
+  duration="2000"
+>
+  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="355" height="150" />
+    </swiper-item>
+  </block>
+</swiper> -->
+<view class="container">
+  <scroll-view>
+    <view class="header">
+      <view class="header_hd">
+        <text>{{city}}</text>
+        <view class="downtips"></view>
+      </view>
+      <view class="header_bd">
+        <view class="header_bd-btn header_bd-hot">正在上映</view>
+        <view class="header_bd-btn header_bd-wait">即将上映</view>
+      </view>
+      <view class="header_ft">
+        <image src="../../images/search.png"></image>
+      </view>
+    </view>
+
+    <swiper indicator-dots="true" autoplay="{{true}}" interval="3000">
+      <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+        <swiper-item>
+          <image class="slide-image" src="{{item}}" />
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <view wx:for="{{items}}" wx:key="{{index}}"> 
+      <view class="flex item" hover-class="gray_hover" hover-stay-="">
+        <view class="item_left">
+          <image src="{{item.imgUrl}}" />
+        </view>
+        <view class="item_middle">
+          <view class="flex_auto">
+            <text class="title">{{item.name}}</text>
+          </view>
+          <view class="item_grade">
+            <text class="score" wx:if="{{item.isShow == 0}}">{{item.wanSee}}
+              <text style="font-size:12px">人想看</text>
+            </text>
+            <text class="score" wx:if="{{item.isShow == 1}}">{{item.grade}}
+              <text style="font-size:12px">份</text>
+            </text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </scroll-view>
+</view>

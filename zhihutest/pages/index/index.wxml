@@ -1,0 +1,15 @@
+<view class="tab-wrapper" bindtap="setActive">
+	<view class="tab-item {{isActive == 0 ? 'tab-item-active' : ''}}" data-index="0">关注</view>
+	<view class="tab-item {{isActive == 1 ? 'tab-item-active' : ''}}" data-index="1">推荐</view>
+	<view class="tab-item {{isActive == 2 ? 'tab-item-active' : ''}}" data-index="2">热榜</view>
+	<view class="tab-item-line" animation="{{animationData}}"></view>
+</view>
+<view class="tab-content {{isActive == 0 ? 'show' : 'hide'}}">
+1
+</view>
+<view class="tab-content {{isActive == 1 ? 'show' : 'hide'}}">
+2
+</view>
+<view class="tab-content {{isActive == 2 ? 'show' : 'hide'}}">
+3
+</view>

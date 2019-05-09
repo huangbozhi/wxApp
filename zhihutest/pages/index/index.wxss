@@ -1,0 +1,31 @@
+page{
+    height: 100%;
+    width: 100%;
+}
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
+.tab-wrapper{
+    width: 100%;
+    background: #F6F6F6;
+    border-top: 1rpx solid #F6F6F6;
+    border-bottom: 1rpx solid #F6F6F6;
+    display: flex;
+    top: 100rpx;
+}
+.tab-item{
+    display: inline-block;
+    flex: 1;
+    font-size: 32rpx;
+    text-align: center;
+    background: #fff;
+    color: #999;
+    padding: 12rpx 0;
+}
+.tab-item-active{
+    color: #323233;
+    border-bottom: 2px solid #000;
+  }
