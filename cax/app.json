@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/countdown/countdown",
     "pages/index/index",
     "pages/logs/logs"
   ],
