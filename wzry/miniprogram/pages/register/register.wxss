@@ -1,0 +1,32 @@
+.userinfo{
+    position: absolute;
+    /* border: 1px solid #000; */
+    width: 100%;
+}
+.username{
+    position: relative;
+    border: 1px solid #ededed;
+}
+.password.passwords{
+    position: relative;
+    border: 1px solid #ededed;
+    margin-top: 20rpx;
+}
+input{
+    height: 90rpx;
+    border-bottom: 1rpx solid #ededed;
+    font-size: 28rpx;
+    color: #000;
+}
+input:first-child{
+    margin-top: 0;
+}
+.register{
+    /* position: relative; */
+    /* margin: 0rpx 30rpx 0 0; */
+    color: #ffffff;
+    background-color: #009900;
+    width: 95%;
+    position: relative;
+    top: 310rpx;
+}

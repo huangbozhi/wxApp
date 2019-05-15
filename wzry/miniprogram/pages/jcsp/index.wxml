@@ -1,5 +1,5 @@
 <view class="container">
-	<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+	<swiper indicator-dots="true" autoplay="true" interval="2000" duration="1000">
 		<block wx:for="{{imgUrls}}" wx:key="{{index}}">
 			<swiper-item>
 				<image src="{{item}}" class="slide-image" width="355" height="150" />
@@ -8,7 +8,7 @@
 	</swiper>
 
 	<view class="top-video">
-		<text class="title">热门视频</text>
+		<text class="title">精彩视频</text>
 		<view class="cards">
 			<view class="card" wx:for="{{top}}" wx:key="{{index}}">
 				<!-- <video 	src="{{item.video}}" id="{{item.id}}" duration="{{item.duration_raw}}" 
@@ -19,9 +19,7 @@
 				</video>
 				<image  data-vid="{{item.id}}" src="{{item.image}}" mode="aspectFill" 
 						bindtap="play" hidden="{{currentVid == item.id}}">
-					<view class="label">
-						{{item.title}}
-					</view>
+					<text class="label">{{item.title}}</text>
 				</image>
 			</view>
 		</view>
@@ -29,7 +27,121 @@
 	</view>
 
 	<view class="all-video">
-		<text class="title">全部视频</text>
-		
-	</view>
+		<text class="title">教学视频</text>
+		<view class="tab-wrapper" bindtap="setActive">
+			<view class="tab-item {{isActive == 0 ? 'tab-item-active' : ''}}" data-index="0">全部</view>
+			<view class="tab-item {{isActive == 1 ? 'tab-item-active' : ''}}" data-index="1">坦克</view>
+			<view class="tab-item {{isActive == 2 ? 'tab-item-active' : ''}}" data-index="2">战士</view>
+			<view class="tab-item {{isActive == 3 ? 'tab-item-active' : ''}}" data-index="3">法师</view>
+			<view class="tab-item {{isActive == 4 ? 'tab-item-active' : ''}}" data-index="4">刺客</view>
+			<view class="tab-item {{isActive == 5 ? 'tab-item-active' : ''}}" data-index="5">射手</view>
+			<view class="tab-item {{isActive == 6 ? 'tab-item-active' : ''}}" data-index="6">辅助</view>
+		</view>
+		</view>
+			<view class="tab-content {{ isActive == 0 ? 'show' : 'hide'}}">
+				<block wx:for="{{allVideos}}" wx:key="index">
+					<view class="box">
+						<video 	src="{{item.video}}" id="{{item.id +10}}" poster="{{item.image}}" 
+							duration="{{item.duration_raw}}" hidden="{{currentVid !== item.id +10}}">
+						</video>
+						<image  data-vid="{{item.id +10}}" src="{{item.image}}" mode="aspectFill" 
+							bindtap="play" hidden="{{currentVid == item.id +10}}">
+							<view class="label">
+								{{item.title}}
+							</view>
+						</image>
+					</view>
+				</block>
+			</view>
+			
+			<view class="tab-content {{isActive == 1 ? 'show' : 'hide'}}">
+				<block wx:for="{{tankeVideo}}" wx:key="index">
+					<view class="box">
+						<video 	src="{{item.video}}" id="{{item.id +20}}" poster="{{item.image}}" 
+							duration="{{item.duration_raw}}" hidden="{{currentVid !== item.id +20}}">
+						</video>
+						<image  data-vid="{{item.id +20}}" src="{{item.image}}" mode="aspectFill" 
+							bindtap="play" hidden="{{currentVid == item.id +20}}">
+							<view class="label">
+								{{item.title}}
+							</view>
+						</image>
+					</view>
+				</block>
+			</view>
+			<view class="tab-content {{isActive == 2 ? 'show' : 'hide'}}">
+				<block wx:for="{{zhanshiVideo}}" wx:key="index">
+					<view class="box">
+						<video 	src="{{item.video}}" id="{{item.id +30}}" poster="{{item.image}}" 
+							duration="{{item.duration_raw}}" hidden="{{currentVid !== item.id +30}}">
+						</video>
+						<image  data-vid="{{item.id +30}}" src="{{item.image}}" mode="aspectFill" 
+							bindtap="play" hidden="{{currentVid == item.id +30}}">
+							<view class="label">
+								{{item.title}}
+							</view>
+						</image>
+					</view>
+				</block>
+			</view>
+			<view class="tab-content {{isActive == 3 ? 'show' : 'hide'}}">
+				<block wx:for="{{apVideo}}" wx:key="index">
+					<view class="box">
+						<video 	src="{{item.video}}" id="{{item.id +40}}" poster="{{item.image}}" 
+							duration="{{item.duration_raw}}" hidden="{{currentVid !== item.id +40}}">
+						</video>
+						<image  data-vid="{{item.id +40}}" src="{{item.image}}" mode="aspectFill" 
+							bindtap="play" hidden="{{currentVid == item.id +40}}">
+							<view class="label">
+								{{item.title}}
+							</view>
+						</image>
+					</view>
+				</block>
+			</view>
+			<view class="tab-content {{isActive == 4 ? 'show' : 'hide'}}">
+				<block wx:for="{{cikeVideo}}" wx:key="index">
+					<view class="box">
+						<video 	src="{{item.video}}" id="{{item.id +50}}" poster="{{item.image}}" 
+							duration="{{item.duration_raw}}" hidden="{{currentVid !== item.id +50}}">
+						</video>
+						<image  data-vid="{{item.id +50}}" src="{{item.image}}" mode="aspectFill" 
+							bindtap="play" hidden="{{currentVid == item.id +50}}">
+							<view class="label">
+								{{item.title}}
+							</view>
+						</image>
+					</view>
+				</block>
+			</view>
+			<view class="tab-content {{isActive == 5 ? 'show' : 'hide'}}">
+				<block wx:for="{{adVideo}}" wx:key="index">
+					<view class="box">
+						<video 	src="{{item.video}}" id="{{item.id +60}}" poster="{{item.image}}" 
+							duration="{{item.duration_raw}}" hidden="{{currentVid !== item.id +60}}">
+						</video>
+						<image  data-vid="{{item.id +60}}" src="{{item.image}}" mode="aspectFill" 
+							bindtap="play" hidden="{{currentVid == item.id +60}}">
+							<view class="label">
+								{{item.title}}
+							</view>
+						</image>
+					</view>
+				</block>
+			</view>
+			<view class="tab-content {{isActive == 6 ? 'show' : 'hide'}}">
+				<block wx:for="{{fuzhuVideo}}" wx:key="index">
+					<view class="box">
+						<video 	src="{{item.video}}" id="{{item.id +70}}" poster="{{item.image}}" 
+							duration="{{item.duration_raw}}" hidden="{{currentVid !== item.id +70}}">
+						</video>
+						<image  data-vid="{{item.id +70}}" src="{{item.image}}" mode="aspectFill" 
+							bindtap="play" hidden="{{currentVid == item.id +70}}">
+							<view class="label">
+								{{item.title}}
+							</view>
+						</image>
+					</view>
+				</block>
+			</view>
 </view>

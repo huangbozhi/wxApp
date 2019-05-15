@@ -7,9 +7,17 @@ App({
     } else {
       wx.cloud.init({
         traceUser: true,
+        env: 'codingdream-w8qqn'
       })
     }
 
-    this.globalData = {}
-  }
+    this.globalData = {
+       username: null,
+       password: null,
+       passwords: null
+    }
+  },
+  checkNamePassword(username, password){
+    
+  },
 })

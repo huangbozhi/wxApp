@@ -52,14 +52,68 @@ page, .container{
     height: 100px;
 }
 .cards .card image .label{
+    width: 100%;
     position: absolute;
     font-size: 24rpx;
     top: 0rpx;
     color: #eeeeee;
+    white-space: normal;
+}
+.all-video{
+    width: 100%;
 }
 .all-video .title{
     position: relative;
     top: 40rpx;
-    left: -290rpx;
     font-size: 40rpx;
+}
+.all-video .tab-wrapper{
+    width: 100%;
+    background: #F6F6F6;
+    border-top: 1rpx solid #F6F6F6;
+    border-bottom: 1rpx solid #F6F6F6;
+    display: flex;
+    top: 100rpx;
+    position: relative;
+    top: 40rpx;
+}
+.tab-item{
+    display: inline-block;
+    flex: 1;
+    font-size: 32rpx;
+    text-align: center;
+    background: #fff;
+    color: rgb(12, 11, 11);
+    padding: 12rpx 0;
+}
+.tab-item-active{
+    border-bottom: 1px solid #000;
+    color: red;
+}
+.tab-content{
+    display: block;
+    width: 98%;
+    position: relative;
+    top: 50rpx;
+}
+.tab-content .box{
+    display: inline-block;
+    width: 48%;
+    padding: 0;
+    margin-left: 2%;
+}
+.tab-content .box:first{
+    margin-left: 0;
+}
+.tab-content .box image,video{
+    width: 147px;
+    height: 104px;
+}
+
+
+.show{
+    display: block;
+}
+.hide{
+    display: none;
 }

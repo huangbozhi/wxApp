@@ -1,0 +1,13 @@
+<view class="userinfo">
+    <view class="username">
+        <input type="number" class='input' placeholder='请输入账号' bindinput='inputUser'></input>
+    </view>
+    <view class="password">
+        <input type="text" class='input' placeholder='请输入密码' bindinput='inputPassword'></input>
+    </view>
+    <view class="password">
+        <input type="text" class='input' placeholder='请确认输入密码' bindinput='inputPasswords'></input>
+    </view>
+</view>
+<button class='register'  bindtap='register'>注册</button>
+

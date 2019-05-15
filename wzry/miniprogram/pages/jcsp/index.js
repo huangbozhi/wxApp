@@ -10,19 +10,25 @@ Page({
       'https://ps.ssl.qhmsg.com/sdr/400__/t01db78e3944e847ea9.jpg',
       'https://ps.ssl.qhmsg.com/sdr/400__/t0185673e9ec570761f.jpg'
     ],
-    indicatorDots: true,
-    autoplay: true,
-    interval: 2000,
-    duration: 1000,
+    currentVid: null,
+    currentVids: null,
+    isActive: 0,
     top: db.top_10,
-    currentVid: null
+    allVideos: db.allVideos,
+    zhanshiVideo: db.zhanshiVideo,
+    tankeVideo: db.tankeVideo,
+    cikeVideo: db.cikeVideo,
+    apVideo: db.apVideo,
+    adVideo: db.adVideo,
+    fuzhuVideo: db.fuzhuVideo
   },
   play(event){
-    console.log(event);
+    // console.log(event);
     if(this.data.currentVid !== null){
       currentVideo.pause();
     }
     const vid = event.target.dataset.vid;
+    console.log(vid);
     if(vid){
       currentVideo = wx.createVideoContext(`${vid}`);
       currentVideo.play();
@@ -30,6 +36,38 @@ Page({
         currentVid: vid
       })
     }
+  },
+  // plays(event){
+  //   console.log(event);
+  //   if(this.data.currentVids !== null){
+  //     currentVideo.pause();
+  //   }
+  //   const vid = event.target.dataset.vid;
+  //   if(vid){
+  //     currentVideo = wx.createVideoContext(`${vid}`);
+  //     currentVideo.play();
+  //     this.setData({
+  //       currentVids: vid
+  //     })
+  //   }
+  // },
+  setActive(e){
+    var index = e.target.dataset.index
+    var animation = wx.createAnimation({
+      duration: 500,
+      timingFunction: 'ease-out',
+      delay: 0
+    });
+     // 距离左边位置
+    animation.left((index * 125) + 'rpx').step()
+    // 设置动画
+    this.setData({
+        animationData: animation.export()
+    });
+    this.setData({
+      isActive: index,
+      id: index
+    })
   },
   /**
    * 生命周期函数--监听页面加载

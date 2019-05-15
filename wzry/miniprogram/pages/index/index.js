@@ -1,13 +1,58 @@
-// miniprogram/pages/index/index.js
+const app = getApp();
+const db = wx.cloud.database();
+const userList = db.collection('userlist')
+
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+      username: null,
+      password: null
   },
-
+  bindUsername(e){
+    this.setData({
+      username: e.detail.value
+    })
+  },
+  bindPassword(e){
+    this.setData({
+      password: e.detail.value
+    })
+  },
+  formSubmit() {
+    if (this.data.username && this.data.password) {
+      wx.cloud.callFunction({
+        name: 'login',
+        data: {
+          username: this.data.username,
+          password: this.data.password
+        },
+        success(res){
+          console.log(res)
+          wx.navigateTo({
+            url: '../jcsp/index',
+           })
+        },
+        fail(error){
+          console.log(error)
+        }
+      })
+    }else {
+      wx.showModal({
+        title: '登录失败',
+        content: '账号或者密码错误',
+        showCancel: false
+      })
+    }
+  },
+  register(){
+    wx.navigateTo({
+      url: '../register/register',
+     })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

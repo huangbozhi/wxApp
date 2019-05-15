@@ -2,12 +2,6 @@ page{
     height: 100%;
     width: 100%;
 }
-.show{
-    display: block;
-}
-.hide{
-    display: none;
-}
 .tab-wrapper{
     width: 100%;
     background: #F6F6F6;
@@ -28,4 +22,12 @@ page{
 .tab-item-active{
     color: #323233;
     border-bottom: 2px solid #000;
-  }
+}
+
+
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
