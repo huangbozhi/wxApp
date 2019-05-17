@@ -14,20 +14,20 @@ Page({
     passwords: null
   },
 
-  inputUser(e){
+  inputUser(e) {
     this.data.username = e.detail.value
     // app.globalData.username = e.detail.value
     console.log(this.data.username)
   },
-  inputPassword(e){
+  inputPassword(e) {
     this.data.password = e.detail.value
     // app.globalData.password = e.detail.value
   },
-  inputPasswords(e){
+  inputPasswords(e) {
     this.data.passwords = e.detail.value
     // app.globalData.passwords = e.detail.value
   },
-  refresh(){
+  refresh() {
     // app.globalData.username = null;
     // app.globalData.password = null;
     // app.globalData.passwords = null;
@@ -36,11 +36,11 @@ Page({
       password: null,
       passwords: null
     })
-   },
+  },
   register() {
     let self = this;
     // console.log(/^[0-9]*$/.test(username),'---',typeof(password))
-    if(!self.data.username || !self.data.password || !self.data.passwords){
+    if (!self.data.username || !self.data.password || !self.data.passwords) {
       console.log(1)
       wx.showModal({
         title: '注册失败',
@@ -53,13 +53,13 @@ Page({
     else if (!(/^[0-9]*$/.test(self.data.username)) || self.data.password !== self.data.passwords) {
       console.log(2)
       wx.showModal({
-      title: '注册失败',
-      content: "用户名不合法或密码错误！",
-      confirmtext: "确定",
-      confirmColor: '#576B95'
+        title: '注册失败',
+        content: "用户名不合法或密码错误！",
+        confirmtext: "确定",
+        confirmColor: '#576B95'
       })
       self.refresh()
-    }else{
+    } else {
       console.log(3)
       wx.cloud.callFunction({
         name: 'getUser',
@@ -67,10 +67,28 @@ Page({
           username: this.data.username,
           password: this.data.password
         },
-        success(res){
+        success(res) {
           console.log(res)
+          // 存在用户
+          if(res.result.flag){
+            wx.showModal({
+              title: '提示',
+              content: '已存在该账号',
+              showCancel: false,
+              confirmText: '确定',
+              confirmColor: '#3CC51F',
+            })
+          } else{
+            wx.showModal({
+              title: '提示',
+              content: '注册成功',
+              showCancel: false,
+              confirmText: '确定',
+              confirmColor: '#3CC51F',
+            })
+          }
         },
-        fail(error){
+        fail(error) {
           console.log(error)
         }
       })
@@ -103,22 +121,22 @@ Page({
     //   }
     //  }
     // })
-   },
-   checkNamePassword(username, password){
+  },
+  checkNamePassword(username, password) {
 
-   },
-   saveuserinfo() {
+  },
+  saveuserinfo() {
     let self = this;
     userList.doc('_openid').set({
-     data: {
-      username: username,
-      password: password
-     }
+      data: {
+        username: username,
+        password: password
+      }
     }).then(res => {
-     app.showTips('注册成功');
+      app.showTips('注册成功');
     })
-   },
-   
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
